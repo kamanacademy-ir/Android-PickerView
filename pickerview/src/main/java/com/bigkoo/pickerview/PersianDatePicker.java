@@ -39,14 +39,18 @@ public class PersianDatePicker extends BasePickerView implements View.OnClickLis
         btnSubmit.setOnClickListener(this);
         btnCancel.setOnClickListener(this);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
-        String[] month_names = context.getResources().getStringArray(R.array.pickerview_persian_month_names);
-        mMonthNames = new ArrayList<>(Arrays.asList(month_names));
     }
     public void setMonthNames(ArrayList<String> month_names) {
         mMonthNames = month_names;
     }
     public void setPicker(int year, int month, int day, int start_year, int end_year, PersianDatePickerListener listener) {
         final View time_picker_view = findViewById(R.id.timepicker);
+
+        if (mMonthNames == null) {
+            String[] month_names = time_picker_view.getResources().getStringArray(R.array.pickerview_persian_month_names);
+            mMonthNames = new ArrayList<>(Arrays.asList(month_names));
+        }
+
         wheelPersian = new WheelPersianDate(time_picker_view);
         wheelPersian.setPickerValues(start_year, end_year, mMonthNames, year, month, day);
         wheelPersian.setCyclic(true);
