@@ -8,4 +8,20 @@
     <string name="pickerview_hours">时</string>
     <string name="pickerview_minutes">分</string>
     <string name="pickerview_seconds">秒</string>
+
+    <string-array name="pickerview_persian_month_names">
+        <item>فروردین</item>
+        <item>اردیبهشت</item>
+        <item>خرداد</item>
+        <item>تیر</item>
+        <item>مرداد</item>
+        <item>شهریور</item>
+        <item>مهر</item>
+        <item>آبان</item>
+        <item>آذر</item>
+        <item>دی</item>
+        <item>بهمن</item>
+        <item>اسفند</item>
+    </string-array>
+
 </resources>
